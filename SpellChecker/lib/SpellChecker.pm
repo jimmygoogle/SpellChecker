@@ -14,9 +14,9 @@ get '/words' => sub
 
 	my $returnResponse = _returnResponse(
 	{
-		'status' 		    => 'false',
+		'status'            => 'false',
 		'httpResponseCode'  => $responseObject->status,
-		'errors' 			=> 'Please supply a word to be spell checked.',		
+		'errors'            => 'Please supply a word to be spell checked.',		
 	});
 	
 	return($returnResponse);
@@ -42,14 +42,14 @@ sub _returnResponse
 	
 	my $returnResponse = 
 	{
-		'httpResponseCode'  => $params->{'httpResponseCode'} || '',
-		'errors' 			=> $params->{'errors'} 			 || '',
+		'httpResponseCode'  => $params->{'httpResponseCode'}    || '',
+		'errors'            => $params->{'errors'}              || '',
 		'currentApiVersion' => $VERSION,
 		'data' => 
 		{
-			'suggestions' 		=> $params->{'suggestions'} 	 || [],	
-			'message' 	  		=> $params->{'message'} 	  	 || '',	
-			'status' 		    => $params->{'status'} 			 || 'unknown',
+			'suggestions'   => $params->{'suggestions'}     || [],	
+			'message'       => $params->{'message'}         || '',	
+			'status'        => $params->{'status'}          || 'unknown',
 		}	
 	};
 	
@@ -105,11 +105,11 @@ sub _isWordSpelledCorrectly
 
 	my $returnResponse = _returnResponse(
 	{
-		'status' 		    => $status,
+		'status'            => $status,
 		'httpResponseCode'  => $responseObject->status,
-		'errors' 			=> $spellerObject->errstr || '',	
-		'suggestions' 		=> \@suggestionsList,
-		'message' 			=> qq|$params->{'word'} is spelled $isSpelled.|,		
+		'errors'            => $spellerObject->errstr || '',	
+		'suggestions'       => \@suggestionsList,
+		'message'           => qq|$params->{'word'} is spelled $isSpelled.|,		
 	});
 	
 	return($returnResponse);
@@ -134,10 +134,10 @@ sub _addWordToDictionary
 	
 	my $returnResponse = _returnResponse(
 	{
-		'status' 		    => $status,
+		'status'            => $status,
 		'httpResponseCode'  => $responseObject->status,
-		'errors' 			=> $spellerObject->errstr || '',	
-		'message' 			=> qq|Added the word '$params->{'word'}'|,		
+		'errors'            => $spellerObject->errstr || '',	
+		'message'           => qq|Added the word '$params->{'word'}'|,		
 	});
 	
 	return($returnResponse);	
