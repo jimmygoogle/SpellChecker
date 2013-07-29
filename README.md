@@ -1,6 +1,6 @@
 ## RESTful spell-checking service built with Dancer.
 
-The API will accept a GET (check the spelling of a supplied word) or a POST (add a new word). Requests to check the spelling of a word will return a true or false status based on the spelling of the word. Incorrectly spelled words will also reutrn a suggested list properly spelled words.
+The API will accept a GET (check the spelling of a supplied word) or a POST (add a new word). Requests to check the spelling of a word will return a true or false status based on the spelling of the word. Incorrectly spelled words will also return a suggested list properly spelled words.
 
 When adding words, the status is determined by the error status of the speller object. This should be improved in future versions.
 
