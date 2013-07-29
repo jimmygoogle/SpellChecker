@@ -148,12 +148,12 @@ sub _createrSpellerObject
 	my $spellerObject = Text::Aspell->new;
 	
 	$spellerObject->set_option('lang','en_US');
-    $spellerObject->set_option('sug-mode','fast');
-    
-    ## TODO: handle case sensitve searches more intelligently
-    $spellerObject->set_option('ignore-case','true');
+	$spellerObject->set_option('sug-mode','fast');
+
+	## TODO: handle case sensitve searches more intelligently
+	$spellerObject->set_option('ignore-case','true');
         
-    return($spellerObject);
+	return($spellerObject);
 }
 
 true;
